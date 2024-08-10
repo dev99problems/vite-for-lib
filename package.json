@@ -1,0 +1,44 @@
+{
+  "name": "vite-for-lib",
+  "version": "0.0.0",
+  "description": "Example lib of using vite in library mode with several separate chunks",
+  "private": true,
+  "engines": {
+    "node": ">=20.16.0",
+    "pnpm": ">=8.6.3"
+  },
+  "scripts": {
+    "build": "rimraf dist/ && tsc && node ./scripts/build.js",
+    "format:staged": "pnpm exec lint-staged --allow-empty --verbose -c .lintstagedrc.cjs",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "lint": "pnpm exec eslint src/ --max-warnings 0",
+    "check:types": "tsc --noEmit",
+    "check:all": "pnpm exec concurrently --kill-others-on-fail pnpm:lint pnpm:check:types pnpm:test",
+    "check:all-with-coverage": "pnpm exec concurrently --kill-others-on-fail pnpm:lint pnpm:check:types pnpm:test:coverage",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "11.1.6",
+    "@types/node": "20.14.8",
+    "@typescript-eslint/eslint-plugin": "7.16.0",
+    "@typescript-eslint/parser": "7.16.0",
+    "@vitest/coverage-v8": "2.0.5",
+    "concurrently": "8.2.2",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-no-only-tests": "3.1.0",
+    "eslint-plugin-unicorn": "55.0.0",
+    "husky": "9.1.4",
+    "jsdom": "24.1.1",
+    "lint-staged": "15.2.8",
+    "prettier": "3.3.3",
+    "rimraf": "6.0.1",
+    "typescript": "5.5.4",
+    "vite": "5.3.5",
+    "vite-plugin-dts": "4.0.2",
+    "vitest": "2.0.5"
+  }
+}

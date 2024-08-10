@@ -1,0 +1,23 @@
+# For reference use https://help.github.com/articles/ignoring-files/
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/dist
+
+# misc
+.DS_Store
+
+.idea
+.vs_code
+
+# debug
+npm-debug.log*
+.pnpm-debug.log*
+
